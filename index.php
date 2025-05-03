@@ -1,6 +1,4 @@
-<?php
-echo "hello world";
-?>
+<?php include 'header.php'; ?>
 <br>
 
 <a href="main.php">Main Page</a><br>
