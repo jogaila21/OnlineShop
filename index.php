@@ -1,4 +1,6 @@
-<?php include 'header.php'; ?>
+
+<html>
+    <head><?php include 'header.php';?></head>
 <br>
 
 <a href="main.php">Main Page</a><br>
@@ -10,3 +12,4 @@
 <a href="admin_view.php">Admin Page</a><br>
 <a href="user_view.php">User Page</a><br>
 <a href="database.php">Check</a>
+</html>
