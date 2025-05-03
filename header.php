@@ -4,7 +4,8 @@
 ?>
 <header>
   <div class="logo">
-    <h1><a href="index.php" style="color: white; text-decoration: none;">BookBuds</a></h1>
+    <h1><a href="index.php" style="color: white; text-decoration: none;">OnlineShop
+    </a></h1>
   </div>
 
   <div class="header-buttons">
