@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+include 'header.php';
 // Verify that the user is logged in. We check for the session key 'UserID' because it's set in process_login.php.
 if (!isset($_SESSION['UserID'])) {
     header("Location: login.php");

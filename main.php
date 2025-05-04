@@ -35,7 +35,7 @@
 </head>
 <body>
 
-    <h1>Welcome to our website!</h1>
+    <h1>Welcome to Comp Bros online shop<br> Please sign in to access the shop</h1>
 
     <div class="button-container">
         <form action="login.php" method="GET">

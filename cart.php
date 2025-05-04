@@ -6,7 +6,7 @@ if (!isset($_SESSION['UserID'])) {
     header("Location: login.php"); // Redirect to login if not logged in.
     exit();
 }
-
+include 'header.php';
 // Database credentials.
 $servername   = "localhost";
 $db_username  = "User";         // As set up in your SQL script.

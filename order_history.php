@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+include 'header.php';
 // Ensure the user is logged in.
 if (!isset($_SESSION['UserID'])) {
     header("Location: login.php");
@@ -148,10 +148,6 @@ if (isset($_GET['order_id']) && !empty($_GET['order_id'])) {
         <?php } else { ?>
         <p>No items found for this order.</p>
         <?php } ?>
-    </div>
-    <div class="redirect">
-        <!-- Button to redirect to user_view.php -->
-        <a href="user_view.php"><button type="button">Continue Shopping</button></a>
     </div>
 </body>
 </html>
