@@ -24,12 +24,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (!$row) {
             echo "No user found with that username.";
         } else {
-            if (hash('sha256', $password) === $row['PasswordHash']) {
+            if (password_verify($password, $row['PasswordHash'])) {
+                // Set session variables
                 $_SESSION['UserID'] = $row['UserID'];
                 $_SESSION['Username'] = $row['Username'];
                 $_SESSION['UserType'] = $row['UserType'];
 
-                if (strtolower($row['UserType']) === 'admin') {
+                // Check UserType and redirect accordingly
+                if (strcasecmp($row['UserType'], 'admin') === 0) {
                     header("Location: admin_view.php");
                 } else {
                     header("Location: index.php");
@@ -47,3 +49,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 } else {
     echo "Invalid request.";
 }
+?>
