@@ -1,28 +1,36 @@
 <?php
 session_start();
 
-// Check if user is logged in, if not, redirect to login
-if (!isset($_SESSION['User_ID'])) {  // Make sure the session variable matches the login session variable
+if (!isset($_SESSION['UserID'])) {
     header('Location: login.php');
     exit();
 }
 
-require 'database.php';  // Make sure this is connecting to the correct database
+require 'database.php';
 
-// Handle search query, sanitize it to prevent security issues
 $searchQuery = isset($_GET['query']) ? trim($_GET['query']) : '';
 
-// Debugging: Check if session is correct
-// var_dump($_SESSION);  // Uncomment this line for debugging
-
-// Redirect to result.php with the search query if there’s any, or back to shop.php
 if ($searchQuery !== '') {
-    // Sanitize the search query to avoid security issues
     $searchQuery = htmlspecialchars($searchQuery);
     header("Location: result.php?query=" . urlencode($searchQuery));
     exit();
 } else {
-    header("Location: shop.php");
+    // Display an error message instead of redirecting
+    echo "<!DOCTYPE html>
+    <html lang='en'>
+    <head>
+        <meta charset='UTF-8'>
+        <title>Search Error</title>
+        <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
+    </head>
+    <body>
+        <div class='container mt-5'>
+            <div class='alert alert-warning'>
+                Please enter a search query.
+            </div>
+        </div>
+    </body>
+    </html>";
     exit();
 }
 ?>

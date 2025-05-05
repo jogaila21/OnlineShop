@@ -44,7 +44,7 @@
                 With years of experience in the industry, we pride ourselves on our commitment to customer satisfaction. Our team of experts is always available to help you find the perfect solution, whether it's for work, gaming, or personal use. We believe in providing excellent value for money, ensuring you get the best technology at the best price.
             </p>
             <p>
-                Our products range from top brands like HP, Dell, Apple, and MSI, as well as accessories to complement your tech needs. We also offer repair services, tech support, and custom PC building for those who require a more tailored experience.
+                Our products range from top brands like HP, Dell, Apple, and MSI, as well as accessories to complement your tech needs.
             </p>
             <p>
                 Visit us today to experience the best in computer technology. We're here to help you with all your tech needs!

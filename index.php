@@ -44,7 +44,7 @@
         }
 
         // SQL query to get the first three products
-        $sql = "SELECT Category, Description, Name, Price, Brand, ImagePath FROM product LIMIT 3";  // Add LIMIT 3 to fetch only 3 products
+        $sql = "SELECT ProductID, Category, Description, Name, Price, Brand, ImagePath FROM product LIMIT 3";  // Add LIMIT 3 to fetch only 3 products
 
         // Execute the query
         $result = $conn->query($sql);
@@ -71,12 +71,18 @@
             // Loop through the results and display each product
             while($row = $result->fetch_assoc()) {
                 echo "<tr>
-                        <td>" . $row["Category"] . "</td>
-                        <td>" . $row["Description"] . "</td>
-                        <td>" . $row["Name"] . "</td>
-                        <td>" . $row["Price"] . "</td>
-                        <td>" . $row["Brand"] . "</td>
-                        <td><img src='" . $row["ImagePath"] . "' alt='Product Image' width='100'></td>
+                        <td>" . htmlspecialchars($row["Category"]) . "</td>
+                        <td>" . htmlspecialchars($row["Description"]) . "</td>
+                        <td>" . htmlspecialchars($row["Name"]) . "</td>
+                        <td>$" . number_format($row["Price"], 2) . "</td>
+                        <td>" . htmlspecialchars($row["Brand"]) . "</td>
+                        <td>
+                            <img src='" . htmlspecialchars($row["ImagePath"]) . "' alt='Product Image' width='100'><br>
+                            <form action='add_item.php' method='POST' style='margin-top:10px;'>
+                                <input type='hidden' name='ProductID' value='" . $row['ProductID'] . "'>
+                                <input type='submit' value='Purchase' class='btn btn-success btn-sm'>
+                            </form>
+                        </td>
                       </tr>";
             }
 

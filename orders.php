@@ -66,5 +66,3 @@ try {
         <?php endforeach; ?>
     <?php endif; ?>
 </div>
-
-<?php include 'footer.php'; ?>
